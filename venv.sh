@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/bin/bash
 
 virtualenv -p python3 venvName
 source venvName/bin/activate
