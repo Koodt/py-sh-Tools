@@ -17,3 +17,9 @@ docker rmi localhost:5000/newTag newName:tag
 
 ### load image from local registry
 docker pull localhost:5000/newTag
+
+### kill exited containers
+docker rm $(docker ps -aqf status=exited)
+
+### kill zombie images
+docker rmi $(docker image ls -qf dangling=true)
