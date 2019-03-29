@@ -29,3 +29,9 @@ curl -X GET http://localhost:5000/v2/_catalog
 
 ### list images tags
 curl -X GET http://localhost:5000/v2/astra16/tags/list
+
+### create new network bridge
+docker network create --subnet=172.27.0.0/16 localDockerNetwork
+
+### run docker container with static ip from new network
+docker run --rm -it --net localDockerNetwork --ip 172.27.0.10 imageName /bin/bash
