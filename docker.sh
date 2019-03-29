@@ -23,3 +23,9 @@ docker rm $(docker ps -aqf status=exited)
 
 ### kill zombie images
 docker rmi $(docker image ls -qf dangling=true)
+
+### list images from local repository
+curl -X GET http://localhost:5000/v2/_catalog
+
+### list images tags
+curl -X GET http://localhost:5000/v2/astra16/tags/list
